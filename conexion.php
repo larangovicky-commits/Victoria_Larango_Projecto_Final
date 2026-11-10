@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'cine';
+$dbname = 'meditech';
 $usuario = 'root';
 $password = '';
 

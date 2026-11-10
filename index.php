@@ -15,7 +15,7 @@
             <fieldset>
                 <legend>Iniciar</legend>
                 
-                <div>
+                <div>   
                     <label for="user">Usuario</label>
                     <input type="user" id="user" name="user" placeholder="Ej: victoria_larango" required>
                 </div>
