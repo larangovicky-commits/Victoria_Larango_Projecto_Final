@@ -8,16 +8,14 @@
 </head>
 <body>
     <div>
-        <h1>✰ DalePlay ✰</h1>
-        <p>Iniciá tu sesión para ver tu nueva serie/película favorita</p>
-
-        <form action="#" method="POST" id="registroForm">
+        <h1>Meditech ✚</h1>
+        <form action="procesar_login.php" method="POST" id="registroForm">
             <fieldset>
                 <legend>Iniciar</legend>
                 
                 <div>   
-                    <label for="user">Usuario</label>
-                    <input type="user" id="user" name="user" placeholder="Ej: victoria_larango" required>
+                    <label for="user">Nombre completo</label>
+                    <input type="user" id="user" name="user" placeholder="Ej: Victoria Larango" required>
                 </div>
 
                 <div>
@@ -28,7 +26,7 @@
 
             <div>
                 <button type="submit">Iniciar sesión</button>
-                <button type="submit2">Crear usuario</button>
+                <button type="button" onclick="window.location.href='crear_usuario.php'" style="background: transparent; color: #136d88; border: 2px solid #136d88;">Registrarse</button>
             </div>
         </form>
     </div>

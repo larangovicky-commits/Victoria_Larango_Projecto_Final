@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'system-ui', sans-serif;
-    background: linear-gradient(135deg, #020000 0%, #ca4d4d 100%);
+    background: linear-gradient(135deg, #0a445f 0%, #8ec5f1 100%);
     min-height: 100vh;
     padding: 10px;
     line-height: 1.7;
@@ -30,13 +30,13 @@ body > div, .form-card, body > div:not(.caja-conteiner) {
 h1{
     font-size: 2rem;
     text-align: center;
-    color: #881313;
+    color: #136d88;
     margin-bottom: 20px;
 }
 
 h1 + p {
     text-align: center;
-    color: #d12121;
+    color: #136d88;
     margin-bottom: 2rem;
     font-size: 1rem;
 }
@@ -48,7 +48,7 @@ form {
 }
 
 fieldset {
-    border: 2px solid #ebcdcd;
+    border: 2px solid #b1cddd;
     border-radius: 15px;
     padding: 1rem;
 }
@@ -56,7 +56,7 @@ fieldset {
 legend {
     font-weight: 700;
     font-size: 1.1rem;
-    color: #d12121;
+    color: #136d88;
     padding: 0 0.75rem;
     display: flex;
     align-items: center;
@@ -71,18 +71,22 @@ label {
     display: block;
     font-size: 0.9rem;
     font-weight: 600; 
-    color: #c92121;
+    color: #136d88;
     margin-bottom: 0.35rem;
     cursor: pointer;
 }
 
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
 input[type="password"],
 input[type="user"],
 select,
 textarea {
     width: 90%;
     padding: 0.7rem 1rem;
-    border: 2px solid #ebcdcd;
+    border: 2px solid #cddfeb;
     font-size: 0.95rem;
     font-family: inherit;
     background: #eee5e5;
@@ -90,18 +94,21 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-    color: #d12121;
+    color: #136d88;
     font-style: italic;
 }
 
 input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
 input[type="email"]:focus,
 input[type="user"]:focus,
 input[type="password"]:focus,
 select:focus,
 textarea:focus {
-    border-color: #d33434;
-    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.363);
+    border-color: #136d88;
+    box-shadow: 0 0 0 3px rgba(19, 109, 136, 0.363);
     background: #ffffff;
 }
 
@@ -162,28 +169,28 @@ button {
 }
 
 button[type="submit"] {
-    background: #c00707;
+    background: #136d88;
     color: white;
     flex: 1;
     max-width: 250px;
 }
 
 button[type="submit"]:hover {
-    background: #911010;
+    background: #136d88;
     transform: translateY(-2px);
 }
 
 button[type="submit2"] {
     background: transparent;
-    color: #d37b7b;
-    border: 2px solid #c00707;
+    color: #136d88;
+    border: 2px solid #136d88;
     flex: 1;
     max-width: 250px;
 }
 
 button[type="submit2"]:hover {
     background: #dbbcbc;
-    border-color: #9c0606;
-    color: #b16868;
+    border-color: #136d88;
+    color: #6968b1;
     transform: translateY(-2px);
 }

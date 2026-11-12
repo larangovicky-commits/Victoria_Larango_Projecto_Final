@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'meditech';
+$dbname = 'medi_tech';
 $usuario = 'root';
 $password = '';
 
@@ -11,11 +11,16 @@ $conexion = new PDO(
 $usuario,
 $password
 );
+
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $conexion->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-error_log($e->getMessage());
+
+} catch (PDOException $error) 
+{
+
+error_log($error->getMessage());
 http_response_code(500);
+
 exit('No se pudo conectar con la base de datos.');
 }
 ?>
