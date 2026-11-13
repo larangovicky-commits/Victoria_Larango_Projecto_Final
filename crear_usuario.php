@@ -17,9 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             try {
             $conexion->beginTransaction();
+            $claveEncriptada = password_hash($password, PASSWORD_DEFAULT);
             $sqlPaciente = $conexion->prepare("INSERT INTO pacientes (Nombres_Apellidos, Telefono, Documento, Edad, Fecha_Nacimiento) VALUES (?, ?, ?, ?, ?)");
             $sqlPaciente->execute([$nombre, $telefono, $documento, $edad, $fechaNacimiento]);
-            $claveEncriptada = password_hash($password, PASSWORD_DEFAULT);
             $sqlUsuario = $conexion->prepare("INSERT INTO usuarios (usuario, clave, Documento_Paciente) VALUES (?, ?, ?)");
             $sqlUsuario->execute([$nombre, $claveEncriptada, $documento]);
             $conexion->commit();

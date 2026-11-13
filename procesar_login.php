@@ -6,12 +6,22 @@ require "conexion.php";
 $user = $_POST["user"];
 $pass   = $_POST["password"];
 
-$consulta = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
-$consulta->execute([$user]);
-$fila = $consulta->fetch();
+$consultaUsuario = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
+$consultaUsuario->execute([$user]);
+$usuario = $consultaUsuario->fetch();
+$paciente = false;
 
-if ($fila && password_verify($pass, $fila["clave"])) {
-    $_SESSION["usuario"] = $fila["usuario"];
+if ($usuario) {
+    $consultaPaciente = $conexion->prepare("SELECT * FROM pacientes WHERE Documento = ?");
+    $consultaPaciente->execute([$usuario["Documento_Paciente"]]);
+    $paciente = $consultaPaciente->fetch();
+}
+
+if ($usuario && $paciente && password_verify($pass, $usuario["clave"])) {
+    $_SESSION["usuario"] = $usuario["usuario"];
+    $_SESSION["paciente"] = $paciente;
+    $_SESSION["documento_paciente"] = $paciente["Documento"];
+
     header("Location: panel.php");
     exit;
 }

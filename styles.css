@@ -194,3 +194,112 @@ button[type="submit2"]:hover {
     color: #6968b1;
     transform: translateY(-2px);
 }
+
+.edit-mode {
+    position: absolute;
+    opacity: 0;
+}
+
+.edit-toggle,
+#saveButton {
+    background: transparent;
+    color: #136d88;
+    border: 2px solid #136d88;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    margin: 0 auto 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.edit-toggle:hover,
+#saveButton:hover {
+    background: rgba(19, 109, 136, 0.08);
+    transform: translateY(-2px);
+}
+
+.edit-mode:focus-visible ~ .panel-actions .edit-toggle {
+    outline: 3px solid rgba(19, 109, 136, 0.5);
+    outline-offset: 3px;
+}
+
+.cancel-label,
+#updateForm {
+    display: none;
+}
+
+.edit-mode:checked ~ .panel-actions .edit-label {
+    display: none;
+}
+
+.edit-mode:checked ~ .panel-actions .cancel-label {
+    display: inline;
+}
+
+.edit-mode:checked ~ #updateForm {
+    display: flex;
+}
+
+.history-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid #136d88;
+    border-radius: 10px;
+    color: #136d88;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.panel-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.panel-actions .history-button,
+.panel-actions .edit-toggle {
+    margin: 0;
+}
+
+.history-button:hover {
+    background: rgba(19, 109, 136, 0.08);
+}
+
+.history-entry {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 2px solid #b1cddd;
+    border-radius: 15px;
+}
+
+.history-entry h2 {
+    color: #136d88;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.history-entry h3,
+#historial > h2 {
+    color: #136d88;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+}
+
+#saveButton {
+    background: #136d88;
+    color: white;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .panel-actions {
+        flex-wrap: wrap;
+    }
+}
